@@ -1,54 +1,59 @@
-# Agentic Exchange Workshop
+# Agent Exchange
 
-A peer-to-peer learning and experimentation forum for exploring how people are practically using AI in their work and lives — from simple productivity workflows to advanced agentic systems and custom technical setups.
+**A peer-to-peer learning community for people figuring out how to actually use AI in their work and lives.**
 
-## What This Is
+We're not a course. We're not a product. We're a group of practitioners — some technical, some not — who meet regularly to share what's working, what's broken, and what's blowing our minds. The only rule: if you learn something, teach it to someone else.
 
-Agent Exchange is a collaborative environment where participants openly share their AI workflows, tools, architectures, and experiments so everyone can learn from each other and level up together. This repository contains the workshop materials, exercises, and a live demo project that illustrates agentic scaffolding in practice.
+## The Idea
 
-## Getting Started
+AI is moving fast. Most people are either overwhelmed by the possibilities or underwhelmed by their results. Agent Exchange exists in the gap between those two feelings — a place to go from "I use ChatGPT sometimes" to "I have an AI system that actually knows me and helps me do real work."
 
-```bash
-git clone <repo-url>
-cd Agentic\ Exchange\ Workshop
-```
+We cover the full spectrum. Beginners learn the fundamentals alongside someone who's done it before. Advanced practitioners push the frontier together in open hacker-house sessions. The social contract: if you join the advanced stream, you teach in the beginner stream. Knowledge compounds when it flows in both directions.
 
-Browse the files in this folder to see the agentic scaffold in action — each file serves a distinct purpose for either human readers or AI agents.
+## Start Here
 
-## What's In Here
+If you're new, **[read the Guide](GUIDE.md)**. It walks you through everything — from your first AI conversation to building a full agentic digital brain — with tools, links, and real examples from our sessions.
 
-| File | Audience | What It Does |
-|------|----------|-------------|
-| README.md | Humans | You're reading it — project overview and orientation |
-| GUIDE.md | Humans | The core knowledge resource — beginner to advanced AI workflows |
-| CLAUDE.md | AI agents | Instructions, conventions, and boundaries for agents working in this project |
-| DECISIONS.md | Both | Architectural decision log — why things are the way they are |
-| ROADMAP.md | Both | Future directions, ideas, and inspiration pipeline |
-| CHANGELOG.md | Both | Narrative history of how this project evolves |
-| .claude/ | AI agents | Claude Code project configuration |
+If you want the fastest possible path to value:
 
-## The Guide
+1. Download [Claude](https://claude.ai/download) and open Cowork
+2. Point it at a folder and tell it what you're working on
+3. Say: *"Ask me questions to understand what I need"*
+4. Install the [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) and [Superpowers](https://github.com/montymerlin/superpowers-plugin) plugins
+5. Start building something real
 
-**[GUIDE.md](GUIDE.md)** is the core knowledge resource — a progressive walkthrough from your first AI conversation to building a full agentic digital brain, layered with tools, resources, and real examples from our sessions.
+You don't need to understand everything before you begin. The AI will meet you where you are.
 
-## Usage
+## What's In This Repo
 
-This project serves two purposes:
+This repo is both the workshop materials *and* a living example of the patterns we teach. Every file demonstrates a principle:
 
-1. **Workshop materials** — Guides, exercises, and reference materials for Agent Exchange sessions covering beginner to advanced agentic AI concepts
-2. **Live demo** — The project itself demonstrates agentic scaffolding principles — dual-audience documentation, architectural decision records, progressive disclosure, and convention over configuration
+| File | What It Does |
+|------|-------------|
+| **[GUIDE.md](GUIDE.md)** | The main event — progressive guide from basics to frontier |
+| **[README.md](README.md)** | You're here — orientation for humans |
+| **[CLAUDE.md](CLAUDE.md)** | Instructions for AI agents working in this project |
+| **[DECISIONS.md](DECISIONS.md)** | Why things are the way they are |
+| **[ROADMAP.md](ROADMAP.md)** | Where we're headed and what we're exploring |
+| **[CHANGELOG.md](CHANGELOG.md)** | The story of how this project evolves |
 
-## Key Concepts Covered
+Notice the dual-audience pattern: README is for you. CLAUDE.md is for the AI. Both exist in the same project, each optimized for their reader. That's one of the first things we teach.
 
-- What agentic AI is and how it differs from conversational AI
-- AI file system access — how agents read, write, and organize your files
-- Markdown as the lingua franca of the agentic era
-- The agentic scaffold pattern — structured documentation for human + AI collaboration
-- CLAUDE.md and agent instruction sets
-- Disciplined workflows — planning before building
-- Building an agentic digital brain
-- Plugins, skills, and MCP connectors
-- Advanced topics: memory, context management, self-hosted systems, security
+## How to Contribute
+
+The best contributions are ones other people can use — workflows, tools, patterns, setups. Specific project demos are interesting, but extractable principles are gold.
+
+Some ideas: demo your AI workflow in a session, teach a beginner module on something you know well, share a plugin or skill you've built, bring a problem you're stuck on, or help someone else architect their system.
+
+## Key Plugins
+
+These are community-maintained plugins for [Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork). To install any of them, paste the GitHub link into Cowork and ask Claude to package + install it.
+
+| Plugin | What It Does |
+|--------|-------------|
+| [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) | Sets up the foundational project structure for AI collaboration |
+| [Superpowers](https://github.com/montymerlin/superpowers-plugin) | Enforces disciplined workflows — brainstorm, plan, execute, verify |
+| [MDPowers](https://github.com/montymerlin/mdpowers-plugin) | Web clipping, PDF conversion, YouTube transcription to markdown |
 
 ## License
 
@@ -56,6 +61,4 @@ MIT
 
 ---
 
-*This project uses an [agentic scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) for AI-assisted development.*
-
-<!-- Agentic Scaffold v0.1.0 | https://github.com/montymerlin/agentic-scaffold-plugin -->
+*Built with an [agentic scaffold](https://github.com/montymerlin/agentic-scaffold-plugin). This project practices what it teaches.*

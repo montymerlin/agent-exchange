@@ -368,31 +368,17 @@ At minimum: understand what data you're sharing, with whom, and what happens to 
 
 ## Part 8: The Agent Exchange Community
 
-### What We're Building Together
+### How the Sessions Work
 
-Agent Exchange is a peer-to-peer learning forum. The format is designed around two principles: push the frontier for those who are ready, and leave no one behind for those who are building capability.
+Agent Exchange runs two streams. **Beginner sessions** are structured — an experienced practitioner leads the group through a specific concept or hands-on project. The best format we've found: someone brings what they're actually trying to build, and the session walks through applying agentic principles to that real project. Learning sticks when it's attached to something you care about.
 
-**Beginner sessions** are structured, with an advanced practitioner leading participants through a specific concept or hands-on project. The best format: someone from the group brings what they're trying to build, and the session walks through applying agentic principles to that real project.
+**Advanced sessions** are open-ended — hacker-house style. Practitioners co-work, demo setups, compare approaches, and push the frontier together. The social contract: if you participate in the advanced stream, you commit to teaching in the beginner stream. Knowledge compounds when it flows both ways.
 
-**Advanced sessions** are open-ended — a hacker-house style where practitioners co-work, demo setups, compare approaches, and push the boundaries of what's possible together. The social contract: if you participate in the advanced stream, you commit to teaching in the beginner stream. Knowledge compounds across the whole community.
+### What Makes a Good Contribution
 
-### How to Contribute
+The most valuable contributions are generalizable — workflows, patterns, and setups that many people can benefit from. A demo of your specific project is interesting, but the extractable principles are what compound across the community.
 
-The best contributions are generalizable — workflows, tools, patterns, and setups that many people in the group can benefit from. Specific project demos are interesting, but the real value is in extractable principles and reusable approaches.
-
-Some ways to contribute: demo your AI workflow in a session, teach a beginner module on a topic you know well, share a plugin or skill you've built, bring a problem you're stuck on for collaborative troubleshooting, or help someone else architect their system.
-
-### Getting Started Right Now
-
-If you're reading this and haven't started yet, here's the shortest path to getting value:
-
-1. Download [Claude](https://claude.ai/download)
-2. Open Cowork and point it at a folder
-3. Tell it what you're trying to do and ask it to ask you questions
-4. Install the [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) and [Superpowers](https://github.com/montymerlin/superpowers-plugin) plugins
-5. Start building something real
-
-You don't need to understand everything in this guide before you begin. Start where you are. The AI will meet you there. And the community is here to help you level up.
+If you're looking for ways to contribute, see the [README](README.md) for ideas.
 
 ---
 
