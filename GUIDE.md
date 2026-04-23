@@ -133,6 +133,8 @@ For web pages, the clip approach strips out ads, navigation, and other noise to 
 
 The quality principle here is crucial: curate what you feed the AI. When doing research, don't just let it scrape random web sources. Find the best five sources, convert them to markdown, drop them in a folder, and point the AI at that. The difference in output quality between "go find stuff on the web" and "here are the best sources I've found, in clean markdown" is enormous.
 
+There is a deeper reason this often works well. Clean markdown or structured text reduces noise, preserves useful structure, and makes retrieval and citation easier. That does not magically eliminate hallucinations, but it often reduces hallucination risk by improving grounding: the agent can search better, chunk better, and point back to clearer source material. The tradeoff is that conversion takes extra time, may use extra tokens during the prep stage, and can introduce extraction errors or lose layout detail on complex documents. Markdown is usually a very strong working format for synthesis, search, and writing, but it is not always the right final representation for scanned forms, dense tables, or highly visual PDFs.
+
 ### Further Reading — Markdown & Tools
 
 - [Typora](https://typora.io) — Clean markdown editor with live preview
