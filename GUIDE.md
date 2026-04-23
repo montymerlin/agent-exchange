@@ -7,7 +7,7 @@ This document is meant to be read front-to-back if you're starting from scratch,
 ## Contents
 
 1. [The Basics — Talking to AI](#part-1-the-basics--talking-to-ai)
-2. [From Chat to Cowork — AI Meets Your Files](#part-2-from-chat-to-cowork--ai-meets-your-files)
+2. [From Chat to Agents That Work on Your Files](#part-2-from-chat-to-agents-that-work-on-your-files)
 3. [Markdown and the Agentic File System](#part-3-markdown-and-the-agentic-file-system)
 4. [The Agentic Scaffold — Structuring Projects for AI](#part-4-the-agentic-scaffold--structuring-projects-for-ai)
 5. [Disciplined Workflows — Planning Before Building](#part-5-disciplined-workflows--planning-before-building)
@@ -46,7 +46,7 @@ One tool that makes a huge difference early on is voice-to-text transcription. I
 
 ---
 
-## Part 2: From Chat to Cowork — AI Meets Your Files
+## Part 2: From Chat to Agents That Work on Your Files
 
 ### The Limitation of Pure Chat
 
@@ -54,31 +54,58 @@ When you use ChatGPT or Claude in regular chat mode, the AI is building a memory
 
 This is the step most people are at, and it's useful — but it's only the beginning.
 
-### What Cowork Is
+### What Cowork and Codex Represent
 
-[Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) is where things shift fundamentally. Instead of just chatting in a box, you point Claude at a folder on your computer and it can read, create, and edit files directly. It can run code, install tools, and interact with your actual work.
+[Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) and [OpenAI Codex](https://openai.com/codex/) both represent the same bigger shift: instead of just chatting in a box, you point an agent at a folder on your computer and it can read, create, and edit files directly. It can run code, install tools, and interact with your actual work.
 
-Think of it this way: chat is like having a conversation with a smart colleague over the phone. Cowork is like inviting that colleague to sit at your desk and work alongside you, with access to your files and the ability to actually do things on your behalf.
+Think of it this way: chat is like having a conversation with a smart colleague over the phone. An agent workspace is like inviting that colleague to sit at your desk and work alongside you, with access to your files and the ability to actually do things on your behalf.
 
-To use Cowork, you open the Claude desktop app, select the Cowork tab, choose a folder on your computer, and start a conversation. Claude will read any instructions it finds in that folder (more on this shortly) and can then help you with whatever you're working on — writing documents, organizing files, building projects, analyzing data.
+In Claude, that surface might be Cowork or Claude Code. In OpenAI, it might be Codex in the app, CLI, or IDE. The principle is the same: the AI stops being only a conversational interface and becomes an active collaborator inside a real working environment.
 
-### Skills and Connectors
+### Skills, Plugins, and Connectors
 
-Once you're in Cowork, you unlock two powerful concepts. Skills are repeatable workflows that Claude can execute — think of them as arms that let the brain do specific things efficiently. Connectors link Claude to external apps and services: Notion, Slack, calendars, databases.
+Once you're working in an agent host, you unlock three powerful concepts.
 
-A good metaphor from our first session: if AI is a brain, a skill is a specialized arm, and a connector is a bridge to other tools where your data lives. When you start honing in on what you actually want to do repeatedly, skills are where you get massive efficiency gains.
+**Skills** are reusable workflows or instruction bundles the agent can invoke repeatedly. They capture procedural knowledge so you don't have to re-prompt from scratch every time.
+
+**Plugins** are packaging and runtime extension layers. A plugin may contain one or more skills, but it can also include agents, hooks, MCP servers, scripts, or other host-specific behavior.
+
+**Connectors** or **MCP servers** link the agent to external apps and services: Notion, Slack, calendars, databases, design tools, internal knowledge bases.
+
+A good metaphor from our first session still holds: if AI is a brain, a skill is a specialized arm, and a connector is a bridge to other tools where your data lives. A plugin is the toolbelt that packages those arms and bridges into something installable.
+
+The important shift is this: building skills and plugins is one of the first signs that someone is moving beyond casual prompting into real agent system design. The beginner asks the model again. The more advanced practitioner turns the repeated workflow into a reusable artifact.
 
 ### The Power of Iterative Skill Building
 
 One of the most valuable patterns is this: use the AI in a simple way first. Notice where the output isn't quite right. Tell it what to improve. Then ask it to build those learnings into a reusable skill. Next time, the output is better. Repeat.
 
-For example, you might ask Claude to convert a PDF to markdown. The first time, it does an okay job but mangles the diagrams. You tell it how you want diagrams handled. It improves. You ask it to save those learnings as a skill. Now every future PDF conversion benefits from that accumulated refinement. Over time, you build up a library of skills that are deeply customized to your specific needs and standards.
+For example, you might ask an agent to convert a PDF to markdown. The first time, it does an okay job but mangles the diagrams. You tell it how you want diagrams handled. It improves. You ask it to save those learnings as a skill. Now every future PDF conversion benefits from that accumulated refinement. Over time, you build up a library of skills that are deeply customized to your specific needs and standards.
 
-### Further Reading — Cowork & Skills
+### Global vs Local Installs
+
+You don't need a complicated matrix to understand the installation question. A simple rule works:
+
+- put **personal, reusable** workflows in a global location for your chosen host
+- put **project-specific, shared** workflows inside the repo
+- choose one canonical source of truth, then use wrappers or symlinks if a host expects a different path
+
+For example, a repo might treat `AGENTS.md` as canonical and keep `CLAUDE.md` only as a compatibility wrapper. It might treat `.agents/skills/` as canonical and expose a Claude-specific path as an alias. The exact folder names matter less than avoiding duplicate editable copies.
+
+### A Note on the Current Landscape (April 22, 2026)
+
+This part of the guide is time-sensitive, so treat it as a snapshot rather than timeless truth.
+
+Right now, [Codex is included with existing ChatGPT Plus, Pro, Business, Enterprise, and Edu subscriptions](https://openai.com/index/introducing-the-codex-app/), and OpenAI is clearly pushing adoption with higher limits and aggressive packaging. [OpenAI's help docs](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan%252525252525252525252525252525252525252525252525252525252525252528.pdf) also note plan-based Codex usage limits, while [ChatGPT Plus is $20/month](https://openai.com/chatgpt/pricing/). On the Claude side, [Claude Pro currently starts around $20/month](https://claude.com/pricing), while heavier Claude use often pushes people toward [Max tiers at $100 or $200/month](https://www.claude.com/pricing/max), with usage limits still applying.
+
+So the practical takeaway today is: if you already pay for ChatGPT, Codex can be an unusually cheap and accessible way to start doing real agent work, and many people currently find its limits less constraining in practice. That may change quickly. Re-check the current pricing and limits before teaching this as settled fact.
+
+### Further Reading — Agent Workspaces & Skills
 
 - [Claude Cowork Guide](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) — Official getting started guide
+- [OpenAI Codex](https://openai.com/codex/) — OpenAI's coding agent
 - [Cursor](https://cursor.com) — AI-first code editor, great for development-focused workflows
-- [Obsidian](https://obsidian.md) — Knowledge management app built on local markdown files — works beautifully with Cowork
+- [Obsidian](https://obsidian.md) — Knowledge management app built on local markdown files — works beautifully with agent workspaces
 
 ---
 
@@ -94,7 +121,7 @@ Markdown is also portable. Your files aren't locked into any app. You can open t
 
 ### Setting Up Your Environment
 
-To work comfortably with markdown, you'll want a good editor. [Typora](https://typora.io) gives you a clean, distraction-free writing experience where the markdown renders in real-time — it looks like a document, not code. [Obsidian](https://obsidian.md) adds a knowledge management layer on top: linking between notes, graph visualization of connections, plugins, and templates. Both work with plain markdown files on your filesystem, which means Claude can read and edit the same files you're working in.
+To work comfortably with markdown, you'll want a good editor. [Typora](https://typora.io) gives you a clean, distraction-free writing experience where the markdown renders in real-time — it looks like a document, not code. [Obsidian](https://obsidian.md) adds a knowledge management layer on top: linking between notes, graph visualization of connections, plugins, and templates. Both work with plain markdown files on your filesystem, which means your agents can read and edit the same files you're working in.
 
 Obsidian deserves special mention. Unlike Notion (where your data lives on their servers), Obsidian is just a beautiful interface for viewing and editing files that live on your computer. Delete Obsidian and the files remain untouched. This matters deeply in the agentic era because the files are yours, portable, and accessible to any AI tool you point at them.
 
@@ -112,7 +139,7 @@ The quality principle here is crucial: curate what you feed the AI. When doing r
 - [Obsidian](https://obsidian.md) — Knowledge management on local markdown files
 - [Defuddle](https://github.com/kepano/defuddle) — Extract clean content from web pages
 - [Markdown Guide](https://www.markdownguide.org) — Learn markdown syntax in minutes
-- **MDPowers Plugin** — Monty's Cowork plugin for web clipping and PDF-to-markdown conversion. Install in Cowork: paste [github.com/montymerlin/mdpowers-plugin](https://github.com/montymerlin/mdpowers-plugin) and ask Claude to install it.
+- **MDPowers Plugin** — Monty's web clipping and document-to-markdown workflow package. In Claude-oriented hosts, install it as a plugin. In Codex-oriented hosts, install the corresponding skills from the same repo.
 
 ---
 
@@ -128,9 +155,11 @@ The agentic scaffold solves this. It's a set of coordinated files at the root of
 
 **README.md** — The human-readable overview. What is this project? How do I set it up? What does it contain? This is for you and anyone else who encounters the folder.
 
-**CLAUDE.md** — The agent instruction set. This is what Claude reads first when it enters your project. It contains the conventions, file structure, boundaries, and pointers to deeper context. Think of it as a job description for the AI: here's what you're working on, here are the rules, here's where to find things.
+**AGENTS.md** — The canonical agent instruction set. This is the most future-friendly place to put project-wide rules, conventions, boundaries, and pointers to deeper context. Think of it as a job description for the AI: here's what you're working on, here are the rules, here's where to find things.
 
-The critical convention is to keep CLAUDE.md tight. It gets loaded into every request, consuming tokens. So don't dump everything in there — keep it to orientation and pointers. If there's deeper context (a detailed style guide, a long research brief), put it in a subdirectory and reference it from CLAUDE.md. The AI will go find it when it's relevant, but it won't burn tokens loading it every single time.
+**CLAUDE.md** — A thin compatibility wrapper for Claude-oriented tooling. If a host expects `CLAUDE.md`, keep it small and have it point back to `AGENTS.md`.
+
+The critical convention is to keep your top-level agent file tight. It gets loaded into every request, consuming tokens. So don't dump everything in there — keep it to orientation and pointers. If there's deeper context (a detailed style guide, a long research brief), put it in a subdirectory and reference it from `AGENTS.md`. The AI will go find it when it's relevant, but it won't burn tokens loading it every single time.
 
 **DECISIONS.md** — An architectural decision log. When the AI (or you) makes a significant choice — redesigning a file structure, adopting a new tool, changing an approach — it gets logged here with the context, the decision, and the consequences. This is invaluable because once you start a new session, all the reasoning from previous sessions is gone unless you've written it down. The decision log creates a searchable trail that prevents repeated mistakes and preserves the "why" behind how things evolved.
 
@@ -142,9 +171,9 @@ The critical convention is to keep CLAUDE.md tight. It gets loaded into every re
 
 These principles emerged from real experience building agentic projects:
 
-**Progressive disclosure** — Start simple. Don't front-load complexity. CLAUDE.md points to deeper files. Those deeper files might point to even deeper ones. The AI loads only what it needs for the current task, keeping token usage efficient and output quality high.
+**Progressive disclosure** — Start simple. Don't front-load complexity. `AGENTS.md` points to deeper files. Those deeper files might point to even deeper ones. The AI loads only what it needs for the current task, keeping token usage efficient and output quality high.
 
-**Dual-audience documentation** — README.md serves humans. CLAUDE.md serves agents. Keep them separate. When you collapse both audiences into one file, neither is served well.
+**Dual-audience documentation** — README.md serves humans. `AGENTS.md` serves agents. Keep them separate. When you collapse both audiences into one file, neither is served well.
 
 **Convention over configuration** — Establish patterns and follow them consistently. When the AI knows that people files always live in `network/people/` and follow a specific template, it can work faster and make fewer mistakes.
 
@@ -152,15 +181,15 @@ These principles emerged from real experience building agentic projects:
 
 ### Getting Set Up
 
-You don't need to create all of this manually. The Agentic Scaffold plugin will scan your existing folder and generate contextually appropriate versions of each file, adapting to what's already there.
+You don't need to create all of this manually. The Agentic Scaffold workflow will scan your existing folder and generate contextually appropriate versions of each file, adapting to what's already there.
 
-**To install:** In Claude Cowork, paste the link to the [Agentic Scaffold plugin](https://github.com/montymerlin/agentic-scaffold-plugin) and ask Claude to install it. Then run `/init` to scaffold your project.
+**To install:** In Claude-oriented hosts, paste the link to the [Agentic Scaffold plugin](https://github.com/montymerlin/agentic-scaffold-plugin) and ask the agent to install it. In Codex-oriented hosts, install the equivalent skills from the repo and run the scaffold flow from there.
 
 ### Further Reading — Scaffolding & Structure
 
-- [Agentic Scaffold Plugin](https://github.com/montymerlin/agentic-scaffold-plugin) — Install in Cowork to scaffold any project
+- [Agentic Scaffold Plugin](https://github.com/montymerlin/agentic-scaffold-plugin) — Scaffold any project with canonical agent files
 - [GitHub](https://github.com) — Version control for your projects. Not just for developers anymore — invaluable for tracking how AI-assisted work evolves and collaborating with others
-- [Anthropic CLAUDE.md Conventions](https://docs.claude.com) — Official documentation on agent instruction files
+- [Anthropic Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — Why reusable skills matter
 
 ---
 
@@ -184,7 +213,7 @@ With these two documents in hand, the AI can execute complex builds in remarkabl
 
 ### The Superpowers Framework
 
-[Superpowers](https://github.com/obra/superpowers) is a popular plugin (42,000+ GitHub stars) that enforces this discipline automatically. Instead of letting Claude wing it, Superpowers establishes a structured pipeline: brainstorm, plan, execute, review, verify — with hard gates at each stage.
+[Superpowers](https://github.com/obra/superpowers) is a popular workflow package (42,000+ GitHub stars) that enforces this discipline automatically. Instead of letting the agent wing it, Superpowers establishes a structured pipeline: brainstorm, plan, execute, review, verify — with hard gates at each stage.
 
 The core principles:
 
@@ -232,7 +261,7 @@ This separation matters because each space needs different treatment. You don't 
 Don't try to architect the perfect system from day one. That's a trap. Start with something small and practical:
 
 1. **Pick one project or area of focus.** Maybe it's a work project, your personal finances, a creative endeavor, or research you're doing.
-2. **Create a folder.** Open it in Cowork.
+2. **Create a folder.** Open it in your preferred agent host.
 3. **Install the agentic scaffold.** Let it set up the basic structure.
 4. **Start working.** As you use it, you'll discover what's missing, what's cluttered, and what conventions help.
 5. **Evolve the system.** Use the roadmap to capture future ideas. Log decisions when you change the structure. Let it grow organically from actual use.
@@ -269,7 +298,7 @@ Several principles have emerged from the community of people building these syst
 
 As your digital brain grows, you'll hit a real problem: there's too much context for the AI to process in a single request. A thousand markdown files with hundreds of thousands of words can't all be loaded every time you ask a question. This is where context management becomes critical.
 
-The principle of progressive disclosure applies here: CLAUDE.md stays tight, pointing to subdirectories. The AI only loads what's relevant to the current task. But even with good structure, you'll eventually need more sophisticated tools.
+The principle of progressive disclosure applies here: `AGENTS.md` stays tight, pointing to subdirectories, while compatibility wrappers stay thin. The AI only loads what's relevant to the current task. But even with good structure, you'll eventually need more sophisticated tools.
 
 [QMD](https://github.com/tobi/qmd) (by Shopify CEO Tobi Lütke) is a local search engine for your markdown files. It combines BM25 keyword search with vector semantic search and LLM re-ranking to find the most relevant documents for any query. Instead of dumping your entire knowledge base into the context, QMD surfaces only the specific documents relevant to your current question. It includes smart chunking, context annotations, collection-based organization, and runs as an MCP server so your AI agents can query it directly. This massively improves performance and makes large knowledge bases practical.
 
@@ -277,7 +306,7 @@ Alternatives exist in this space — [Khoj](https://github.com/khoj-ai/khoj) is 
 
 ### Sub-Projects Within Your Brain
 
-A mature digital brain isn't one flat folder — it's a system of sub-projects, each with their own scaffolding. You might have a master system (your overall agentic brain) that contains sub-projects for each major area of work. Each sub-project can be opened independently in Cowork, with its own CLAUDE.md tuned to that specific context, while the master system knows about all of them.
+A mature digital brain isn't one flat folder — it's a system of sub-projects, each with their own scaffolding. You might have a master system (your overall agentic brain) that contains sub-projects for each major area of work. Each sub-project can be opened independently in an agent host, with its own `AGENTS.md` tuned to that specific context, while the master system knows about all of them.
 
 This means you can spin up a new project quickly (the scaffold gives you the basic architecture), work on it in focused sessions, and your broader system still has visibility into everything you're doing across all projects.
 
@@ -389,18 +418,19 @@ If you're looking for ways to contribute, see the [README](README.md) for ideas.
 | Tool | What It Does | Link |
 |------|-------------|------|
 | Claude Desktop | AI chat + Cowork + file access | [claude.ai/download](https://claude.ai/download) |
+| OpenAI Codex | Agentic coding workspace available through ChatGPT plans | [openai.com/codex](https://openai.com/codex/) |
 | Obsidian | Knowledge management on local markdown | [obsidian.md](https://obsidian.md) |
 | Typora | Clean markdown editor | [typora.io](https://typora.io) |
 
-### Plugins for Claude Cowork
+### Skills & Plugins
 
-| Plugin | What It Does | Install |
+| Workflow | What It Does | Install |
 |--------|-------------|---------|
-| Agentic Scaffold | Project scaffolding (CLAUDE.md, DECISIONS.md, etc.) | [github.com/montymerlin/agentic-scaffold-plugin](https://github.com/montymerlin/agentic-scaffold-plugin) |
+| Agentic Scaffold | Project scaffolding (`AGENTS.md`, DECISIONS.md, CHANGELOG.md, etc.) | [github.com/montymerlin/agentic-scaffold-plugin](https://github.com/montymerlin/agentic-scaffold-plugin) |
 | Superpowers | Disciplined workflow (brainstorm → plan → execute → verify) | [github.com/montymerlin/superpowers-plugin](https://github.com/montymerlin/superpowers-plugin) |
 | MDPowers | Web clipping, PDF conversion, YouTube transcription | [github.com/montymerlin/mdpowers-plugin](https://github.com/montymerlin/mdpowers-plugin) |
 
-**To install any plugin:** paste the GitHub link into Claude Cowork and ask it to look at the repo, package it, and install the plugin.
+**Install pattern:** use repo-local installs for shared project workflows, and global installs for personal reusable workflows. If a host expects a different path or packaging format, use a wrapper or symlink rather than maintaining two editable copies.
 
 ### Advanced Tools
 

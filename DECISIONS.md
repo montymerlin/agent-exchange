@@ -49,5 +49,33 @@ Architectural decisions for this project, logged in a lightweight ADR (Architect
 - Slides-only approach — misses the hands-on, "see it working" dimension
 - Pre-built demo with no live changes — less engaging, doesn't show the workflow in action
 
+---
+
+## Decision 003: Teach cross-host agent workflows with AGENTS.md as canonical
+
+**Status:** Accepted
+**Date:** 2026-04-22
+
+**Context:** The workshop was initially scaffolded around `CLAUDE.md` and Cowork-specific language because Claude was the clearest hands-on entry point at the time. Since then, the ecosystem has shifted. Agent Skills have been published as an open standard, Codex now treats skills as a first-class workflow layer, and the practical teaching need is no longer "how do I use one vendor's AI app?" but "how do I build portable, repeatable agent workflows across hosts?" This repo needs to model that shift directly.
+
+**Decision:** Make `AGENTS.md` the canonical instruction file for this repo, keep `CLAUDE.md` as a thin compatibility wrapper, and update the teaching materials to frame skills, plugins, and MCP-style connectors as core concepts of the agentic era rather than Claude-only features. The guide should explicitly teach the difference between:
+
+- skills as reusable workflow units
+- plugins as packaging and runtime extension layers that may bundle skills plus other capabilities
+- connectors or MCP servers as access bridges to external tools and data
+
+The guide should also note the current market context as of April 22, 2026: Codex is unusually accessible because it is included in existing ChatGPT subscriptions and currently benefits from aggressive rollout and higher available limits, while Claude remains a major host with strong plugin and Cowork workflows. This comparison should be presented as a time-bound observation, not a permanent truth.
+
+**Consequences:**
+- The repo now teaches a more future-friendly pattern instead of hardcoding one host as the default mental model
+- Participants can understand why skills and plugins matter as a maturity step from prompting toward reusable systems
+- The workshop stays relevant even as the landscape shifts between Claude, Codex, and future hosts
+- Current docs need careful wording so they stay useful without becoming a fragile pricing sheet
+
+**Alternatives Considered:**
+- Keep the repo Claude-first — easier in the short term, but increasingly misleading
+- Rewrite the guide as fully tool-agnostic with no vendor examples — cleaner in theory, but less concrete for beginners
+- Add a deep installation matrix — too detailed for the guide's teaching purpose right now
+
 <!-- Scaffold sources: Michael Nygard ADR proposal (2011), Keeling & Runde sustainable ADRs (IEEE Software), bridging-worlds DECISIONS.md pattern -->
 <!-- Agentic Scaffold v0.1.0 | https://github.com/montymerlin/agentic-scaffold-plugin -->

@@ -4,6 +4,12 @@ A narrative record of how this project evolves. Updated after significant work s
 
 ---
 
+## 2026-04-22 — Reframed Agent Exchange for the cross-host agent era
+
+Updated the repo to teach a more future-friendly pattern. `AGENTS.md` is now the canonical instruction file, with `CLAUDE.md` reduced to a compatibility wrapper. The guide and README were also revised to present skills, plugins, and connectors as core reusable workflow concepts rather than Claude-only features. This change reflects a broader shift in the ecosystem: practical agent use is increasingly about building portable systems and reusable workflows, not just getting better at prompting inside one app.
+
+---
+
 ## 2026-04-13 — GUIDE.md Enriched with Research Depth
 
 Deepened GUIDE.md with content drawn from broader montymerlinHQ research — patterns, repos-and-tools registry, plan, and roadmap. Part 6 (Digital Brain) gained the Three-Space Architecture, soul-building details (soul.md + NEON-SOUL), core operating principles (Text > Brain, Structure is the API, Capture cheap / distill valuable), expanded QMD technical details, alternative tools (Khoj, Fabric), a Business Brain section, and further reading (Docling, life-system). Part 7 (Advanced Frontier) gained the three-layer memory model, the 6 Rs processing pipeline from Ars Contexta (with emphasis on the Reweave backward-pass), overnight memory consolidation from Claudia, a new multi-agent orchestration section covering Ruflo (swarm topologies, self-learning routing) and Egregore (context-as-DOM with lifecycle management), and expanded security patterns (least privilege, secret segregation, prompt injection defense, data classification). Quick Reference tables reorganized with a new Frontier & Orchestration section covering the newly referenced tools. The guide is now substantially richer while maintaining the progressive disclosure structure — beginners aren't overwhelmed, advanced readers get real depth.

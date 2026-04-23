@@ -16,10 +16,10 @@ If you're new, **[read the Guide](GUIDE.md)**. It walks you through everything �
 
 If you want the fastest possible path to value:
 
-1. Download [Claude](https://claude.ai/download) and open Cowork
+1. Open an agent host you already have access to — Claude Cowork or OpenAI Codex are both good current options
 2. Point it at a folder and tell it what you're working on
 3. Say: *"Ask me questions to understand what I need"*
-4. Install the [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) and [Superpowers](https://github.com/montymerlin/superpowers-plugin) plugins
+4. Install the [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) and [Superpowers](https://github.com/montymerlin/superpowers-plugin) workflows that fit your host
 5. Start building something real
 
 You don't need to understand everything before you begin. The AI will meet you where you are.
@@ -32,12 +32,13 @@ This repo is both the workshop materials *and* a living example of the patterns 
 |------|-------------|
 | **[GUIDE.md](GUIDE.md)** | The main event — progressive guide from basics to frontier |
 | **[README.md](README.md)** | You're here — orientation for humans |
-| **[CLAUDE.md](CLAUDE.md)** | Instructions for AI agents working in this project |
+| **[AGENTS.md](AGENTS.md)** | Canonical instructions for AI agents working in this project |
+| **[CLAUDE.md](CLAUDE.md)** | Thin compatibility wrapper for Claude-oriented runtimes |
 | **[DECISIONS.md](DECISIONS.md)** | Why things are the way they are |
 | **[ROADMAP.md](ROADMAP.md)** | Where we're headed and what we're exploring |
 | **[CHANGELOG.md](CHANGELOG.md)** | The story of how this project evolves |
 
-Notice the dual-audience pattern: README is for you. CLAUDE.md is for the AI. Both exist in the same project, each optimized for their reader. That's one of the first things we teach.
+Notice the dual-audience pattern: README is for you. `AGENTS.md` is for the AI. `CLAUDE.md` remains as a compatibility alias. That's one of the first things we teach.
 
 ## How to Contribute
 
@@ -45,11 +46,11 @@ The best contributions are ones other people can use — workflows, tools, patte
 
 Some ideas: demo your AI workflow in a session, teach a beginner module on something you know well, share a plugin or skill you've built, bring a problem you're stuck on, or help someone else architect their system.
 
-## Key Plugins
+## Key Workflows
 
-These are community-maintained plugins for [Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork). To install any of them, paste the GitHub link into Cowork and ask Claude to package + install it.
+These are community-maintained skills and plugins that help move from one-off prompting into repeatable agent workflows. Some install as Claude plugins, some can be used as Codex skills, and some can be adapted across hosts.
 
-| Plugin | What It Does |
+| Workflow | What It Does |
 |--------|-------------|
 | [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) | Sets up the foundational project structure for AI collaboration |
 | [Superpowers](https://github.com/montymerlin/superpowers-plugin) | Enforces disciplined workflows — brainstorm, plan, execute, verify |

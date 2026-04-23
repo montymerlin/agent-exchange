@@ -21,7 +21,7 @@ Items likely to be addressed in the next development cycle.
 Ideas worth evaluating when the time is right. No commitment, but worth thinking about.
 
 - **MCP connectors deep-dive** — Session on connecting AI agents to external tools (Notion, Slack, databases) via MCP. `status: idea`
-- **Plugin creation workshop** — Teach participants to build their own Cowork plugins with skills and templates. `status: idea`
+- **Plugin creation workshop** — Teach participants to build their own skills and plugins as reusable agent workflows. `status: idea`
 - **Advanced agent workflows** — Multi-agent patterns, parallel work, verification chains. `status: idea`
 - **Participant showcase format** — Regular sessions where members demo their own AI workflows and setups. `status: idea`
 
@@ -29,8 +29,8 @@ Ideas worth evaluating when the time is right. No commitment, but worth thinking
 
 Inspiration, references, repos, articles, and possibilities. Things you've seen or thought of that might be relevant someday.
 
-- **Anthropic Agent Skills architecture** — Three-level progressive disclosure model for agent context. Useful reference for explaining why CLAUDE.md should stay small. `status: parked`
-- **HumanLayer CLAUDE.md best practices** — Community guide with practical tips. Good handout material. `status: parked`
+- **Anthropic Agent Skills architecture** — Three-level progressive disclosure model for agent context. Useful reference for explaining why agent instructions should stay small and point outward. `status: parked`
+- **Cross-host install patterns** — Good future handout material covering local vs global installs and host-specific compatibility layers. `status: parked`
 - **awesome-cursorrules repo** — Collection of .cursorrules patterns across stacks. Useful for showing how different tools handle agent conventions. `status: parked`
 - **Superpowers framework** — Workflow discipline framework for AI-assisted work. Already in use on this project. `status: parked`
 
@@ -40,6 +40,7 @@ Items that have been evaluated. The reasoning lives in [DECISIONS.md](DECISIONS.
 
 - **Adopted agentic scaffold** — → Decision 001. `status: decided`
 - **Workshop as both materials and live demo** — → Decision 002. `status: decided`
+- **Teach cross-host agent workflows with AGENTS.md canonical** — → Decision 003. `status: decided`
 
 <!-- Scaffold sources: GitHub roadmap patterns (github.com/github/roadmap), Mozilla Science roadmapping guide, agile parking lot conventions (Aha! Roadmaps), YAGNI principle -->
 <!-- Agentic Scaffold v0.1.0 | https://github.com/montymerlin/agentic-scaffold-plugin -->
