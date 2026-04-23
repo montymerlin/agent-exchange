@@ -4,6 +4,12 @@ A narrative record of how this project evolves. Updated after significant work s
 
 ---
 
+## 2026-04-23 — Clarified the core workflow stack
+
+Expanded the guide's teaching layer so the featured repos read as a coherent workflow stack rather than a loose list of tools. Agentic Scaffold is now framed as structure, Superpowers as discipline, Git as collaboration and safety, and MDPowers as ingestion. The guide also now points to a non-technical Git explainer, making version control feel more approachable for people learning AI-assisted workflows from outside software culture.
+
+---
+
 ## 2026-04-22 — Reframed Agent Exchange for the cross-host agent era
 
 Updated the repo to teach a more future-friendly pattern. `AGENTS.md` is now the canonical instruction file, with `CLAUDE.md` reduced to a compatibility wrapper. The guide and README were also revised to present skills, plugins, and connectors as core reusable workflow concepts rather than Claude-only features. This change reflects a broader shift in the ecosystem: practical agent use is increasingly about building portable systems and reusable workflows, not just getting better at prompting inside one app.

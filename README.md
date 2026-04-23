@@ -19,7 +19,7 @@ If you want the fastest possible path to value:
 1. Open an agent host you already have access to — Claude Cowork or OpenAI Codex are both good current options
 2. Point it at a folder and tell it what you're working on
 3. Say: *"Ask me questions to understand what I need"*
-4. Install the [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) and [Superpowers](https://github.com/montymerlin/superpowers-plugin) workflows that fit your host
+4. Add a few core workflows that fit your host: structure, discipline, git safety, and ingestion
 5. Start building something real
 
 You don't need to understand everything before you begin. The AI will meet you where you are.
@@ -50,11 +50,19 @@ Some ideas: demo your AI workflow in a session, teach a beginner module on somet
 
 These are community-maintained skills and plugins that help move from one-off prompting into repeatable agent workflows. Some install as Claude plugins, some can be used as Codex skills, and some can be adapted across hosts.
 
+Taken together, they form a useful four-part stack:
+
+- **Agentic Scaffold** = structure
+- **Superpowers** = discipline
+- **Git Plugin** = collaboration and safety
+- **MDPowers** = ingestion
+
 | Workflow | What It Does |
 |--------|-------------|
 | [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) | Sets up the foundational project structure for AI collaboration |
-| [Superpowers](https://github.com/montymerlin/superpowers-plugin) | Enforces disciplined workflows — brainstorm, plan, execute, verify |
-| [MDPowers](https://github.com/montymerlin/mdpowers-plugin) | Web clipping, PDF conversion, YouTube transcription to markdown |
+| [Superpowers](https://github.com/montymerlin/superpowers-plugin) | Enforces disciplined workflows — brainstorm, plan, execute, review, verify |
+| [Git Plugin](https://github.com/montymerlin/git-plugin) | Helps you understand status, make safer commits, and use PRs when the risk is higher |
+| [MDPowers](https://github.com/montymerlin/mdpowers-plugin) | Turns messy source material into clean markdown through clipping, conversion, and transcription |
 
 ## License
 

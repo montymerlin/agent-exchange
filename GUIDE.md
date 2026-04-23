@@ -139,7 +139,7 @@ The quality principle here is crucial: curate what you feed the AI. When doing r
 - [Obsidian](https://obsidian.md) — Knowledge management on local markdown files
 - [Defuddle](https://github.com/kepano/defuddle) — Extract clean content from web pages
 - [Markdown Guide](https://www.markdownguide.org) — Learn markdown syntax in minutes
-- **MDPowers Plugin** — Monty's web clipping and document-to-markdown workflow package. In Claude-oriented hosts, install it as a plugin. In Codex-oriented hosts, install the corresponding skills from the same repo.
+- **MDPowers Plugin** — Monty's web clipping and document-to-markdown workflow package. More importantly, it models an important agentic pattern: ingest first, think second. In Claude-oriented hosts, install it as a plugin. In Codex-oriented hosts, install the corresponding skills from the same repo.
 
 ---
 
@@ -150,6 +150,13 @@ The quality principle here is crucial: curate what you feed the AI. When doing r
 Every time you start a new conversation with an AI, it wakes up with no context. It doesn't know who you are, what you're working on, what conventions matter, or what decisions have been made. Without structure, you end up re-explaining everything from scratch, and the AI makes assumptions that may not match your needs.
 
 The agentic scaffold solves this. It's a set of coordinated files at the root of any project that give the AI the context it needs to work effectively from the very first message.
+
+This is the first piece of a useful four-part workflow stack:
+
+- **Agentic Scaffold** gives the work structure
+- **Superpowers** adds discipline
+- **Git Plugin** adds collaboration and safety rails
+- **MDPowers** turns outside material into AI-readable inputs
 
 ### The Core Files
 
@@ -225,12 +232,48 @@ The core principles:
 
 The result: instead of the AI producing a rough first draft that needs heavy editing, it produces considered, well-architected work that often needs minimal revision. People report 5x quality improvements in their output after adopting this approach.
 
+There are two useful Superpowers lanes to understand:
+
+- the **official Superpowers** project is strongest for software development workflows
+- Monty's **knowledge-work adaptation** is for creative, strategic, business, and research contexts
+
+That split is itself an important lesson: good agent workflows often share the same backbone, but need different domain-specific versions.
+
 **To install:** Paste [github.com/montymerlin/superpowers-plugin](https://github.com/montymerlin/superpowers-plugin) into Cowork and ask Claude to install it. Monty's fork is adapted for creative, strategic, and business work (the original is more developer-focused). You can run both — they appear as separate skills.
 
 ### Further Reading — Workflows & Planning
 
 - [Superpowers Plugin (Monty's fork)](https://github.com/montymerlin/superpowers-plugin) — Adapted for creative and business workflows
 - [Superpowers (Original)](https://github.com/obra/superpowers) — The original developer-focused version
+
+---
+
+## Part 5.5: Git for Humans Working with AI
+
+One thing people often miss in agent workflows is that Git is not "just for developers." It's the collaboration and safety layer that makes AI-assisted work far less scary.
+
+If an agent can edit files quickly, Git gives you the counterweight:
+
+- checkpoints you can return to
+- small, understandable changes
+- review before shared changes become official
+- a clean way to collaborate without overwriting each other
+
+For most people, the useful mental model is simple:
+
+- **commit** = save a stable checkpoint
+- **branch** = use a separate workspace when the change is risky
+- **pull request** = ask whether this should become official
+- **merge** = make the approved change part of the shared history
+
+You do not need to become a terminal power-user to benefit from this. In small content or research repos, routine low-risk edits can often go straight to `main`; bigger structural or tooling changes benefit from branch + PR discipline.
+
+This is why a Git workflow plugin belongs in the same conversation as scaffolds and skills. It doesn't create the work — it makes the work safer, more legible, and more collaborative.
+
+### Further Reading — Git for Humans
+
+- [Git Plugin](https://github.com/montymerlin/git-plugin) — Guided commits, PRs, and repo orientation for AI-assisted workflows
+- [Git Explained](https://github.com/montymerlin/git-plugin/blob/main/references/git-explained.md) — Non-technical guide to commits, branches, PRs, and merges
 
 ---
 
@@ -428,7 +471,8 @@ If you're looking for ways to contribute, see the [README](README.md) for ideas.
 |--------|-------------|---------|
 | Agentic Scaffold | Project scaffolding (`AGENTS.md`, DECISIONS.md, CHANGELOG.md, etc.) | [github.com/montymerlin/agentic-scaffold-plugin](https://github.com/montymerlin/agentic-scaffold-plugin) |
 | Superpowers | Disciplined workflow (brainstorm → plan → execute → verify) | [github.com/montymerlin/superpowers-plugin](https://github.com/montymerlin/superpowers-plugin) |
-| MDPowers | Web clipping, PDF conversion, YouTube transcription | [github.com/montymerlin/mdpowers-plugin](https://github.com/montymerlin/mdpowers-plugin) |
+| Git Plugin | Guided commits, PRs, and repo safety rails | [github.com/montymerlin/git-plugin](https://github.com/montymerlin/git-plugin) |
+| MDPowers | Clipping, conversion, and transcription into clean markdown | [github.com/montymerlin/mdpowers-plugin](https://github.com/montymerlin/mdpowers-plugin) |
 
 **Install pattern:** use repo-local installs for shared project workflows, and global installs for personal reusable workflows. If a host expects a different path or packaging format, use a wrapper or symlink rather than maintaining two editable copies.
 
