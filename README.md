@@ -59,10 +59,10 @@ Taken together, they form a useful four-part stack:
 
 | Workflow | What It Does |
 |--------|-------------|
-| [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) | Sets up the foundational project structure for AI collaboration |
-| [MDPowers](https://github.com/montymerlin/mdpowers-plugin) | Turns messy source material into clean markdown through clipping, conversion, and transcription |
-| [Superpowers](https://github.com/montymerlin/superpowers-plugin) | Enforces disciplined workflows — brainstorm, plan, execute, review, verify |
-| [Git Plugin](https://github.com/montymerlin/git-plugin) | Helps you understand status, make safer commits, and use PRs when the risk is higher |
+| [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) | Sets up the core files and structure that help you and an AI work clearly inside a project |
+| [MDPowers](https://github.com/montymerlin/mdpowers-plugin) | Pulls useful content out of web pages, PDFs, and audio or video so an AI can actually work with it |
+| [Superpowers](https://github.com/montymerlin/superpowers-plugin) | Helps an AI slow down and follow a better process: brainstorm first, make a plan, then execute and review |
+| [Git Plugin](https://github.com/montymerlin/git-plugin) | Makes version control easier to understand so you can save checkpoints, review changes, and collaborate more safely |
 
 ## License
 

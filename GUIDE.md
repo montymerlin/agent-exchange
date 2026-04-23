@@ -469,10 +469,10 @@ If you're looking for ways to contribute, see the [README](README.md) for ideas.
 
 | Workflow | What It Does | Install |
 |--------|-------------|---------|
-| Agentic Scaffold | Project scaffolding (`AGENTS.md`, DECISIONS.md, CHANGELOG.md, etc.) | [github.com/montymerlin/agentic-scaffold-plugin](https://github.com/montymerlin/agentic-scaffold-plugin) |
-| MDPowers | Clipping, conversion, and transcription into clean markdown | [github.com/montymerlin/mdpowers-plugin](https://github.com/montymerlin/mdpowers-plugin) |
-| Superpowers | Disciplined workflow (brainstorm → plan → execute → verify) | [github.com/montymerlin/superpowers-plugin](https://github.com/montymerlin/superpowers-plugin) |
-| Git Plugin | Guided commits, PRs, and repo safety rails | [github.com/montymerlin/git-plugin](https://github.com/montymerlin/git-plugin) |
+| Agentic Scaffold | Sets up the core files and structure that help you and an AI work clearly inside a project | [github.com/montymerlin/agentic-scaffold-plugin](https://github.com/montymerlin/agentic-scaffold-plugin) |
+| MDPowers | Pulls useful content out of web pages, PDFs, and audio or video so an AI can actually work with it | [github.com/montymerlin/mdpowers-plugin](https://github.com/montymerlin/mdpowers-plugin) |
+| Superpowers | Helps an AI slow down and follow a better process: brainstorm first, make a plan, then execute and review | [github.com/montymerlin/superpowers-plugin](https://github.com/montymerlin/superpowers-plugin) |
+| Git Plugin | Makes version control easier to understand so you can save checkpoints, review changes, and collaborate more safely | [github.com/montymerlin/git-plugin](https://github.com/montymerlin/git-plugin) |
 
 **Install pattern:** use repo-local installs for shared project workflows, and global installs for personal reusable workflows. If a host expects a different path or packaging format, use a wrapper or symlink rather than maintaining two editable copies.
 
