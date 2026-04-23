@@ -277,6 +277,77 @@ This is why a Git workflow plugin belongs in the same conversation as scaffolds 
 
 ---
 
+## Part 5.6: What This Looks Like in Practice — Bridging Worlds
+
+It's one thing to name a workflow stack. It's another to see what it looks like in a real project.
+
+[Bridging Worlds](https://github.com/montymerlin/bridging-worlds) is a good example because it isn't a toy repo. It's a living research commons with research pages, report drafts, lab projects, converted reference documents, shared skills, search infrastructure, decision logs, and contributor guidance. The interesting part is not just that these tools are installed there. It's that each one plays a distinct role.
+
+### 1. Agentic Scaffold gives the project a shared shape
+
+Bridging Worlds uses the scaffold pattern directly:
+
+- `AGENTS.md` is the canonical guide for agents
+- `CLAUDE.md` is a thin compatibility wrapper
+- `DECISIONS.md`, `ROADMAP.md`, and `CHANGELOG.md` each have distinct roles
+- repo conventions are documented clearly enough that new human or AI collaborators can join without starting from scratch
+
+This is what structure looks like in practice. The scaffold is not just about generating files. It's about making a project legible.
+
+### 2. MDPowers turns raw material into usable research inputs
+
+The commons depends on a steady flow of source material becoming markdown the system can actually work with.
+
+In practice, that looks like:
+
+- converting reference PDFs into markdown so they can be searched alongside the rest of the corpus
+- clipping web sources into local files
+- transcribing interviews and videos into structured text
+- feeding all of that into the sources commons instead of leaving it trapped in external formats
+
+This is why ingestion matters so much. Before an agent can think well, compare well, or synthesize well, the source material has to be brought into a form it can actually use.
+
+### 3. Superpowers adds process discipline
+
+Bridging Worlds also shows that a strong system is not only about files and tools. It's about how decisions get made.
+
+You can see that discipline in patterns like:
+
+- active use of decision logs before structural changes
+- explicit research plans and trial definitions
+- milestone reflections and retrospectives
+- evidence-oriented research writing rather than loose assertion
+
+That is the Superpowers principle in action, even when the plugin itself is not named in every file: don't just ask the agent to produce output. Give it a better thinking process.
+
+### 4. Git makes the collaboration survivable
+
+A project like Bridging Worlds changes constantly. That only works because Git provides the shared memory and safety layer:
+
+- contributors have clear guidance for when to commit to `main` and when to use branch + PR
+- changes are saved as checkpoints instead of becoming one giant blur
+- git hooks regenerate indexes and keep shared maps in sync
+- collaborators can move fast without losing the thread of what changed and why
+
+This is why Git belongs in the agent stack, not outside it. Once agents are editing real projects, version control stops being optional infrastructure and becomes part of the workflow itself.
+
+### The practical lesson
+
+The four tools are useful on their own, but the real shift happens when they start reinforcing each other:
+
+- Scaffold gives the project structure
+- MDPowers brings outside material in
+- Superpowers improves how the work is thought through
+- Git keeps the whole process safe, reviewable, and collaborative
+
+That combination is what makes a repo start to feel less like a folder of files and more like an actual agentic working environment.
+
+### Further Reading — Bridging Worlds as Example
+
+- [Bridging Worlds](https://github.com/montymerlin/bridging-worlds) — a live example of an agentic research commons
+
+---
+
 ## Part 6: Building Your Agentic Digital Brain
 
 ### Why a Digital Brain Matters

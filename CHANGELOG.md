@@ -4,6 +4,12 @@ A narrative record of how this project evolves. Updated after significant work s
 
 ---
 
+## 2026-04-23 — Added a real-world example for the workflow stack
+
+Expanded the guide again so the four-part workflow stack is illustrated through a concrete project rather than only described abstractly. Bridging Worlds is now used as the example of how structure, ingestion, process discipline, and version control reinforce each other inside a living agentic research commons. This makes the guide more useful for beginners who understand examples faster than architecture diagrams.
+
+---
+
 ## 2026-04-23 — Clarified the core workflow stack
 
 Expanded the guide's teaching layer so the featured repos read as a coherent workflow stack rather than a loose list of tools. Agentic Scaffold is now framed as structure, Superpowers as discipline, Git as collaboration and safety, and MDPowers as ingestion. The guide also now points to a non-technical Git explainer, making version control feel more approachable for people learning AI-assisted workflows from outside software culture.
