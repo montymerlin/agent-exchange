@@ -154,9 +154,9 @@ The agentic scaffold solves this. It's a set of coordinated files at the root of
 This is the first piece of a useful four-part workflow stack:
 
 - **Agentic Scaffold** gives the work structure
+- **MDPowers** turns outside material into AI-readable inputs
 - **Superpowers** adds discipline
 - **Git Plugin** adds collaboration and safety rails
-- **MDPowers** turns outside material into AI-readable inputs
 
 ### The Core Files
 
@@ -470,9 +470,9 @@ If you're looking for ways to contribute, see the [README](README.md) for ideas.
 | Workflow | What It Does | Install |
 |--------|-------------|---------|
 | Agentic Scaffold | Project scaffolding (`AGENTS.md`, DECISIONS.md, CHANGELOG.md, etc.) | [github.com/montymerlin/agentic-scaffold-plugin](https://github.com/montymerlin/agentic-scaffold-plugin) |
+| MDPowers | Clipping, conversion, and transcription into clean markdown | [github.com/montymerlin/mdpowers-plugin](https://github.com/montymerlin/mdpowers-plugin) |
 | Superpowers | Disciplined workflow (brainstorm → plan → execute → verify) | [github.com/montymerlin/superpowers-plugin](https://github.com/montymerlin/superpowers-plugin) |
 | Git Plugin | Guided commits, PRs, and repo safety rails | [github.com/montymerlin/git-plugin](https://github.com/montymerlin/git-plugin) |
-| MDPowers | Clipping, conversion, and transcription into clean markdown | [github.com/montymerlin/mdpowers-plugin](https://github.com/montymerlin/mdpowers-plugin) |
 
 **Install pattern:** use repo-local installs for shared project workflows, and global installs for personal reusable workflows. If a host expects a different path or packaging format, use a wrapper or symlink rather than maintaining two editable copies.
 

@@ -48,21 +48,21 @@ Some ideas: demo your AI workflow in a session, teach a beginner module on somet
 
 ## Key Workflows
 
-These are community-maintained skills and plugins that help move from one-off prompting into repeatable agent workflows. Some install as Claude plugins, some can be used as Codex skills, and some can be adapted across hosts.
+These are Monty-built and maintained skills and plugins that help move from one-off prompting into repeatable agent workflows. Some install as Claude plugins, some can be used as Codex skills, and some can be adapted across hosts.
 
 Taken together, they form a useful four-part stack:
 
 - **Agentic Scaffold** = structure
+- **MDPowers** = ingestion
 - **Superpowers** = discipline
 - **Git Plugin** = collaboration and safety
-- **MDPowers** = ingestion
 
 | Workflow | What It Does |
 |--------|-------------|
 | [Agentic Scaffold](https://github.com/montymerlin/agentic-scaffold-plugin) | Sets up the foundational project structure for AI collaboration |
+| [MDPowers](https://github.com/montymerlin/mdpowers-plugin) | Turns messy source material into clean markdown through clipping, conversion, and transcription |
 | [Superpowers](https://github.com/montymerlin/superpowers-plugin) | Enforces disciplined workflows — brainstorm, plan, execute, review, verify |
 | [Git Plugin](https://github.com/montymerlin/git-plugin) | Helps you understand status, make safer commits, and use PRs when the risk is higher |
-| [MDPowers](https://github.com/montymerlin/mdpowers-plugin) | Turns messy source material into clean markdown through clipping, conversion, and transcription |
 
 ## License
 
