@@ -4,6 +4,24 @@ A narrative record of how this project evolves. Updated after significant work s
 
 ---
 
+## 2026-05-18 — Taught the nested-instructions pattern in GUIDE Part 4
+
+Added a new sub-section to GUIDE.md Part 4 ("The Agentic Scaffold") titled *When to nest, and when to template*. The section covers the three-layer instruction pattern (root rules → folder-level `AGENTS.md` → templates as exemplars), the lazy-load vs eager-load behaviour difference between Claude Code and Codex, and the path-scoped `.claude/rules/` escape hatch. Points readers at the `modules/` folder in this very repo as the worked example, closing the loop between Decision 002 ("the project is the demo") and the structural work done earlier today.
+
+The Further Reading list for Part 4 was extended with primary sources: the agents.md spec, Anthropic's Claude Code memory docs, OpenAI's Codex AGENTS.md guide, and GitHub's analysis of 2,500 real `AGENTS.md` files — so readers who want to verify the claims or go deeper have direct paths to do so.
+
+---
+
+## 2026-05-18 — Introduced nested folder-level instructions, starting with `modules/`
+
+Added a `modules/` subfolder containing its own `AGENTS.md` (folder-scoped rules) and `TEMPLATE.md` (the exemplar shape for a workshop module). This closes a gap between what the repo teaches and what it embodies — the project had been a flat repo that *described* nested agent instructions in the guide without practising them. Decision 004 captures the reasoning and cites the underlying research: Anthropic's Claude Code memory docs, OpenAI's Codex AGENTS.md guide, the cross-host agents.md spec, and GitHub's analysis of 2,500 real AGENTS.md files all converge on the same three-layer pattern (root rules, folder-level specialization, concrete templates as exemplars).
+
+The folder-level `AGENTS.md` is intentionally short — it specializes rather than repeats root guidance. `TEMPLATE.md` is intentionally concrete — workshop modules now have a known shape to imitate rather than reinvent. One subfolder rather than several, in keeping with progressive disclosure: more (`exercises/`, `sessions/`, etc.) can follow when the need is clear.
+
+The root `AGENTS.md` directory-structure block was updated minimally to reflect the new folder. A teaching moment lives in the new folder's file itself: it calls out that Claude Code lazy-loads nested instructions while Codex loads them eagerly — a non-obvious behaviour that affects when the rules actually apply.
+
+---
+
 ## 2026-04-23 — Added a real-world example for the workflow stack
 
 Expanded the guide again so the four-part workflow stack is illustrated through a concrete project rather than only described abstractly. Bridging Worlds is now used as the example of how structure, ingestion, process discipline, and version control reinforce each other inside a living agentic research commons. This makes the guide more useful for beginners who understand examples faster than architecture diagrams.

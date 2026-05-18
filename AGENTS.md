@@ -14,14 +14,19 @@ A peer-to-peer learning and experimentation forum for exploring how people are p
 Agent Exchange Workshop/
 ├── README.md              # Human-facing overview
 ├── GUIDE.md               # Core knowledge resource — beginner to advanced
-├── AGENTS.md              # Canonical agent instructions
+├── AGENTS.md              # Canonical project-wide agent instructions (this file)
 ├── CLAUDE.md              # Claude compatibility wrapper
 ├── DECISIONS.md           # Architectural decision log
 ├── ROADMAP.md             # Future directions and ideas
 ├── CHANGELOG.md           # Narrative change history
+├── modules/               # Workshop modules — see modules/AGENTS.md for folder-scoped rules
+│   ├── AGENTS.md          # Folder-scoped instructions for module authors
+│   └── TEMPLATE.md        # Exemplar shape for new modules
 └── .claude/
     └── settings.local.json  # Claude Code project config
 ```
+
+Folder-scoped `AGENTS.md` files specialize root guidance — they cover rules that only apply inside that folder. See Decision 004 for the rationale.
 
 ## Key Conventions
 

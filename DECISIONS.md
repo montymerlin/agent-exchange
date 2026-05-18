@@ -77,5 +77,33 @@ The guide should also note the current market context as of April 22, 2026: Code
 - Rewrite the guide as fully tool-agnostic with no vendor examples — cleaner in theory, but less concrete for beginners
 - Add a deep installation matrix — too detailed for the guide's teaching purpose right now
 
+---
+
+## Decision 004: Introduce nested folder-level AGENTS.md + TEMPLATE.md, starting with `modules/`
+
+**Status:** Accepted
+**Date:** 2026-05-18
+
+**Context:** Research into current agent-instruction best practice (Anthropic Claude Code memory docs, OpenAI Codex AGENTS.md guide, the agents.md spec under the Linux Foundation, and GitHub's analysis of 2,500 real AGENTS.md files) converges on a three-layer pattern: root instructions for global rules, folder-level instructions for "when working in here" specialization, and concrete templates as exemplars to imitate. The repo currently demonstrates only layer one. Decision 002 commits us to making the project a live demo of what it teaches, so the gap between what the guide describes and what the repo embodies is itself a problem.
+
+A second motivation: the ROADMAP already has three active workshop modules queued (intro to agentic AI, AI file system access, scaffold-your-own-project exercise). They have no home in the repo, which forces every authoring session to re-derive shape.
+
+**Decision:** Introduce a `modules/` subfolder containing its own `AGENTS.md` (folder-scoped instructions) and `TEMPLATE.md` (the exemplar shape for a workshop module). Start with this one subfolder rather than building out the full nested structure at once, in keeping with the progressive-disclosure principle. Additional subfolders (e.g. `exercises/`, `sessions/`) can follow if and when the need is clear.
+
+The folder-level `AGENTS.md` should specialize, not duplicate root guidance — naming conventions, module-specific structure, and the pointer to `TEMPLATE.md` live there. The root `AGENTS.md` keeps project-wide rules only.
+
+**Consequences:**
+- The repo now demonstrates the nested-instructions pattern instead of only describing it. GUIDE.md Part 4 has new material to point at.
+- Future workshop modules have a known shape and home — authors (human or agent) imitate `TEMPLATE.md` rather than reinventing structure.
+- Two non-obvious caveats need to be taught alongside the pattern. In Claude Code, nested `AGENTS.md` (or `CLAUDE.md`) is *lazy-loaded* — it only enters context when the agent reads a file inside that folder. So a rule like "when drafting a module, do X" only fires if the agent is operating inside `modules/`. In OpenAI Codex, the load is eager from project root down to cwd, with a 32 KiB combined cap. Both behaviours are worth covering in the guide.
+- For rules that must trigger whenever certain files are touched regardless of cwd, the right escape hatch is `.claude/rules/*.md` with `paths:` frontmatter — deferred for now (see Proposal 3, not yet decided).
+- Root `AGENTS.md` needs a minimal update so its Directory Structure block reflects the new folder.
+
+**Alternatives Considered:**
+- Build out the full nested structure now (`modules/`, `exercises/`, `sessions/`, `decisions/TEMPLATE.md` etc.) — premature; violates progressive disclosure; better to ship one working example and iterate.
+- Add only `TEMPLATE.md` files without folder-level `AGENTS.md` — misses half the pattern; the folder-level file is what tells the agent the template exists and when to use it.
+- Use `.claude/rules/` path-scoped rules instead of nested `AGENTS.md` — more powerful for some cases, but Claude-specific. Nested `AGENTS.md` is cross-host (Codex, Claude Code, and the 60k+ projects on the agents.md spec all honour it). Path-scoped rules can be added later as a complementary mechanism.
+
 <!-- Scaffold sources: Michael Nygard ADR proposal (2011), Keeling & Runde sustainable ADRs (IEEE Software), bridging-worlds DECISIONS.md pattern -->
+<!-- Decision 004 research sources: code.claude.com/docs/en/memory, developers.openai.com/codex/guides/agents-md, agents.md, github.blog (2,500-repo analysis) -->
 <!-- Agentic Scaffold v0.1.0 | https://github.com/montymerlin/agentic-scaffold-plugin -->

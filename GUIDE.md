@@ -188,6 +188,22 @@ These principles emerged from real experience building agentic projects:
 
 **The project is the demo** — Especially for learning: every file in your project should exemplify the patterns you're teaching or practicing. Sloppy scaffolding undermines the whole system.
 
+### When to nest, and when to template
+
+The root files cover project-wide rules. But once a project grows past a handful of documents, some rules only apply *in certain folders*. "Workshop modules use this structure." "Research notes follow this citation format." "Anything in `tools/` is generated — don't hand-edit." If you stuff all that into the root `AGENTS.md`, it gets long and noisy, and most of it isn't relevant to most tasks.
+
+There are two extensions to the basic scaffold that handle this. Both are explicitly supported by Claude Code, by OpenAI Codex, and by the cross-host AGENTS.md spec used by 60,000+ open-source projects. They're not workarounds — they're the documented way to scale agent instructions past one file.
+
+**Folder-level `AGENTS.md`.** Drop another `AGENTS.md` inside a subfolder. It specializes the rules for work inside that folder. The agent walks up the directory tree, concatenates everything from the root down, and the closest file wins on conflicts. You can see this in action in [`modules/`](modules/) in this very repo — its `AGENTS.md` covers naming conventions, what belongs in a module, and a pointer to the template. The root `AGENTS.md` doesn't need to repeat any of that.
+
+**Templates as exemplars.** This one is more powerful than it looks, and it's the part most people miss. Language models are pattern-followers more than rule-followers — "do it like this file" lands more reliably than "follow these fifteen requirements." When a folder has a known shape it produces (a workshop module, a research note, a decision entry), drop a `TEMPLATE.md` alongside the `AGENTS.md` and tell the agent to copy and adapt it. [`modules/TEMPLATE.md`](modules/TEMPLATE.md) in this repo is a working example. The agent infers the shape from the artifact rather than reconstructing it from rules in its head.
+
+The two work as a pair. The folder `AGENTS.md` is the *announcement* — "when you work here, modules look like this." The `TEMPLATE.md` is the *demonstration*. Either one alone is weaker than the two together.
+
+**A non-obvious caveat worth knowing.** In Claude Code, folder-level `AGENTS.md` files are *lazy-loaded* — they only enter context when the agent reads a file inside that folder. So if you're starting fresh from the project root and asking "draft a new workshop module," the rules in `modules/AGENTS.md` may not be in context yet. The workaround is simple: reference `modules/TEMPLATE.md` explicitly in your prompt, or work from inside the folder. In OpenAI Codex, the load is eager from project root down to your current directory, so this is less of an issue. Same pattern, different timing — the kind of detail that bites teams who don't know about it.
+
+For rules that should fire whenever an agent touches certain *kinds* of files regardless of which folder it's working in — say, "any markdown file in `research/` must include a sources section" — Claude Code also supports `.claude/rules/*.md` with `paths:` frontmatter, a path-scoped rule that triggers on file pattern rather than directory. That's a complementary mechanism worth knowing exists, but for most projects the folder-level `AGENTS.md` + `TEMPLATE.md` pair carries the load.
+
 ### Getting Set Up
 
 You don't need to create all of this manually. The Agentic Scaffold workflow will scan your existing folder and generate contextually appropriate versions of each file, adapting to what's already there.
@@ -199,6 +215,10 @@ You don't need to create all of this manually. The Agentic Scaffold workflow wil
 - [Agentic Scaffold Plugin](https://github.com/montymerlin/agentic-scaffold-plugin) — Scaffold any project with canonical agent files
 - [GitHub](https://github.com) — Version control for your projects. Not just for developers anymore — invaluable for tracking how AI-assisted work evolves and collaborating with others
 - [Anthropic Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) — Why reusable skills matter
+- [AGENTS.md spec](https://agents.md/) — The cross-host open format for agent instructions, stewarded by the Linux Foundation's Agentic AI Foundation. Honoured by Codex, Claude Code, Cursor, Aider, and many others
+- [Claude Code memory docs](https://code.claude.com/docs/en/memory) — Anthropic's official guidance on how nested `CLAUDE.md` / `AGENTS.md` files load, with the path-scoped rules mechanism documented
+- [OpenAI Codex AGENTS.md guide](https://developers.openai.com/codex/guides/agents-md) — OpenAI's side of the same pattern, with explicit support for `AGENTS.override.md` and per-directory precedence
+- [How to write a great agents.md (GitHub)](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/) — Lessons from analyzing 2,500 real `AGENTS.md` files; the source for "pattern-followers more than rule-followers"
 
 ---
 
