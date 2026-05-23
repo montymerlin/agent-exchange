@@ -62,19 +62,23 @@ Think of it this way: chat is like having a conversation with a smart colleague 
 
 In Claude, that surface might be Cowork or Claude Code. In OpenAI, it might be Codex in the app, CLI, or IDE. The principle is the same: the AI stops being only a conversational interface and becomes an active collaborator inside a real working environment.
 
-### Skills, Plugins, and Connectors
+### Skills, Plugins, Connectors, and Workflows
 
-Once you're working in an agent host, you unlock three powerful concepts.
+Before the definitions, the *why*. AI agents are inconsistent: ask the same thing twice and the quality varies, start a new session and the agent remembers nothing, swap models and the behaviour shifts. Almost every structural practice in this guide is a response to that one problem. The concepts here — skills, plugins, connectors, workflow files — together with templates and nested `AGENTS.md` files (Part 4) are all the same idea in different forms: ways to capture *"how we do this well"* as something durable and versioned, so a good result becomes a repeatable one instead of depending on a lucky prompt.
 
-**Skills** are reusable workflows or instruction bundles the agent can invoke repeatedly. They capture procedural knowledge so you don't have to re-prompt from scratch every time.
+With that in mind, four concepts you unlock once you're working in an agent host:
+
+**Skills** are reusable instruction or capability bundles the agent invokes when they're relevant. They capture procedural knowledge so you don't re-prompt from scratch every time.
 
 **Plugins** are packaging and runtime extension layers. A plugin may contain one or more skills, but it can also include agents, hooks, MCP servers, scripts, or other host-specific behavior.
 
-**Connectors** or **MCP servers** link the agent to external apps and services: Notion, Slack, calendars, databases, design tools, internal knowledge bases.
+**Connectors** (or **MCP servers**) link the agent to external apps and services: Notion, Slack, calendars, databases, design tools, internal knowledge bases.
 
-A good metaphor from our first session still holds: if AI is a brain, a skill is a specialized arm, and a connector is a bridge to other tools where your data lives. A plugin is the toolbelt that packages those arms and bridges into something installable.
+**Workflow files** are written, repeatable procedures kept in the repo — how to close out a session, how to run a release. The difference from a skill: a skill is a capability the agent reaches for automatically; a workflow is an explicit procedure a human or agent *follows* on demand. It's the long-standing "runbook" or "playbook" pattern, adapted for AI.
 
-The important shift is this: building skills and plugins is one of the first signs that someone is moving beyond casual prompting into real agent system design. The beginner asks the model again. The more advanced practitioner turns the repeated workflow into a reusable artifact.
+A metaphor from our first session still holds, extended: if AI is a brain, a skill is a specialized arm, a connector is a bridge to where your data lives, and a plugin is the toolbelt that packages arms and bridges into something installable — and a workflow file is the written recipe an arm follows so the result comes out the same each time.
+
+The important shift is this: building these artifacts is one of the first signs that someone is moving beyond casual prompting into real agent system design. The beginner asks the model again. The more advanced practitioner turns the repeated task into a durable artifact.
 
 ### The Power of Iterative Skill Building
 
@@ -192,7 +196,7 @@ These principles emerged from real experience building agentic projects:
 
 The root files cover project-wide rules. But once a project grows past a handful of documents, some rules only apply *in certain folders*. "Workshop modules use this structure." "Research notes follow this citation format." "Anything in `tools/` is generated — don't hand-edit." If you stuff all that into the root `AGENTS.md`, it gets long and noisy, and most of it isn't relevant to most tasks.
 
-There are two extensions to the basic scaffold that handle this. Both are explicitly supported by Claude Code, by OpenAI Codex, and by the cross-host AGENTS.md spec used by 60,000+ open-source projects. They're not workarounds — they're the documented way to scale agent instructions past one file.
+There are two extensions to the basic scaffold that handle this — both *consistency mechanisms* in the sense Part 2 set out: durable structure that makes an inconsistent agent produce the same shape of work each time. Both are explicitly supported by Claude Code, by OpenAI Codex, and by the cross-host AGENTS.md spec used by 60,000+ open-source projects. They're not workarounds — they're the documented way to scale agent instructions past one file.
 
 **Folder-level `AGENTS.md`.** Drop another `AGENTS.md` inside a subfolder. It specializes the rules for work inside that folder. The agent walks up the directory tree, concatenates everything from the root down, and the closest file wins on conflicts. You can see this in action in [`modules/`](modules/) in this very repo — its `AGENTS.md` covers naming conventions, what belongs in a module, and a pointer to the template. The root `AGENTS.md` doesn't need to repeat any of that.
 
