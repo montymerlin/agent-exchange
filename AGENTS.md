@@ -13,6 +13,7 @@ A peer-to-peer learning and experimentation forum for exploring how people are p
 ```
 Agent Exchange Workshop/
 ├── README.md              # Human-facing overview
+├── LICENSE                # MIT
 ├── GUIDE.md               # Core knowledge resource — beginner to advanced
 ├── AGENTS.md              # Canonical project-wide agent instructions (this file)
 ├── CLAUDE.md              # Claude compatibility wrapper

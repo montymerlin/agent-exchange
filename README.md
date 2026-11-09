@@ -66,7 +66,7 @@ Taken together, they form a useful four-part stack:
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
 
 ---
 

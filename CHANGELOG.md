@@ -4,6 +4,15 @@ A narrative record of how this project evolves. Updated after significant work s
 
 ---
 
+## 2026-11-09 — Added the MIT LICENSE file the README already promised
+
+The README has said MIT from the start, but the repo had no licence text, so GitHub
+showed no licence and anyone adapting the workshop materials had nothing to cite. Added
+the standard MIT `LICENSE` (Copyright (c) 2026 Monty Bryant) and pointed the README's
+License section at it. The licence itself is unchanged.
+
+---
+
 ## 2026-05-18 — Taught the nested-instructions pattern in GUIDE Part 4
 
 Added a new sub-section to GUIDE.md Part 4 ("The Agentic Scaffold") titled *When to nest, and when to template*. The section covers the three-layer instruction pattern (root rules → folder-level `AGENTS.md` → templates as exemplars), the lazy-load vs eager-load behaviour difference between Claude Code and Codex, and the path-scoped `.claude/rules/` escape hatch. Points readers at the `modules/` folder in this very repo as the worked example, closing the loop between Decision 002 ("the project is the demo") and the structural work done earlier today.
